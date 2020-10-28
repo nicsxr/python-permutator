@@ -1,12 +1,16 @@
 from itertools import combinations
 
 s = input("Enter a word: ")
+c = int(input("How many letters? "))
 
-t = list(combinations(s, 2))
+if(c>len(s)):
+     c = len(s)
+        
+t = list(combinations(s, c))
 text_file = open("output.txt", "w")
 
 for i in range(0, len(t)):
     text_file.write(''.join(t[i]) + "\n")
 
-print(i)
+print(i+1)
 
